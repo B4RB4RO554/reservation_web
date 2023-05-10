@@ -1,0 +1,117 @@
+{% block sidebar %}
+ <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="#">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+       
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Session</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Abonnement</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">>
+              <i class="bi bi-circle"></i><span>Offre</span>
+
+            </a>
+          </li>
+          <li>
+            <a href="#">>
+              <i class="bi bi-circle"></i><span>Evenements</span>
+
+            </a>
+          </li>
+          <li>
+            <a href="/calendar">
+              <i class="bi bi-circle"></i><span>Edit Calender</span>
+            </a>
+          </li>
+                    <li>
+            <a href="/main">
+              <i class="bi bi-circle"></i><span>Calender</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+        {# SAIF PARTS (UTILISATEURS) #}
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Utilisateur</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href=="#">
+              <i class="bi bi-circle"></i><span>All</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+        {% endif %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Materiel</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/materiel">
+              <i class="bi bi-circle"></i><span>Materiel</span>
+            </a>
+          </li>
+          <li>
+            <a href="/fournisseur">
+              <i class="bi bi-circle"></i><span>Vendor</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Charts Nav -->
+        {# WASIM PARTS (PRODUCTS) #}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Terrain</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/terrain">
+              <i class="bi bi-gem"></i><span>terrain</span>
+            </a>
+          </li>
+          <li>
+            <a href="/reservation">
+              <i class="bi bi-circle"></i><span>Reservation</span>
+            </a>
+          </li>
+
+
+          
+        </ul><!-- End Icons Nav -->
+
+      <li class="nav-heading">Pages</li>
+
+      <a class="nav-link " href="/music">
+          <i class="bi bi-grid"></i>
+          <span>Music Player</span>
+        </a>
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Terrain{% endblock %}
+
+{% block body %}
+    <h1>Edit Terrain</h1>
+                <div class="card-body">
+                
+                <h5 class="card-title" style="margin-left:300px;">Edit Terrain</h5>
+                <div class=" align-items-center justify-content-start" style="margin-left:300px"> 
+    {{ include('terrain/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_terrain_index') }}class="btn btn-warnning"">back to list</a>
+
+    {{ include('terrain/_delete_form.html.twig') }}
+{% endblock %}

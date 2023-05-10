@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Terrain index{% endblock %}
+
+{% block body %}
+    <h1>Terrain index</h1>
+<div class="card-body">
+                
+                <h5 class="card-title" style="margin-left:300px;">Afficher Terrain</h5>
+                <div class=" align-items-center justify-content-start" style="margin-left:300px"> 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_t</th>
+                <th>Nb_places</th>
+                <th>Surface</th>
+                <th>Type_r</th>
+                <th>Type_c</th>
+                <th>Prix</th>
+                <th>Img</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for terrain in terrains %}
+            <tr>
+                <td>{{ terrain.id }}</td>
+                <td>{{ terrain.nomT }}</td>
+                <td>{{ terrain.nbPlaces }}</td>
+                <td>{{ terrain.surface }}</td>
+                <td>{{ terrain.typeR }}</td>
+                <td>{{ terrain.typeC }}</td>
+                <td>{{ terrain.prix }}</td>
+               <td><img src="{{ asset('uploads/' ~ terrain.img) }}" alt="{{ terrain.img }}" width="50" height="50"</td>
+                <td>
+                    <a href="{{ path('app_terrain_show', {'id': terrain.id}) }}"class="btn btn-primary">show</a>
+                    <a href="{{ path('app_terrain_edit', {'id': terrain.id}) }}"class="btn btn-primary">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_terrain_new') }}"class="btn btn-primary">Create new</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base1.html.twig' %}
+ 
+{% block title %}New Reservation{% endblock %}
+
+{% block body %}
+{% include ('front_office/partials/Navbar.html.twig') %} 
+
+ {% include ('front_office/partials/Header.html.twig') %} 
+    <h1>Create new Reservation</h1>
+   
+
+    {{ include('reservation/_form.html.twig') }}
+
+  
+     {% include ('front_office/partials/footer.html.twig') %}   
+{% endblock %}
